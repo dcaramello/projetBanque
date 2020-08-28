@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>index</title>
+  <title>statistiques</title>
   <meta name="description" content="web site of banque non populaire ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,7 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -62,9 +62,25 @@
       <div id="description" class="gotham center">
     </div>
   </header>
-  
-  <main>
-   
+  <!-- main with a statistic on the table since statistiques.json -->
+  <main class="container">
+    <div class="center">
+      <h2 class="gotham">Statistiques</h2>
+      <p class="mulish font-italic">Suivez l'évolution des taux d'emprunts, du PIB et le cours de la bourse.</p>
+    </div>
+    <div id="classement">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Année</th>
+              <th scope="col">Taux</th>
+              <th scope="col">PIB</th>
+              <th scope="col">CAC40</th>
+            </tr>
+          </thead>
+          <tbody id="table"></tbody>
+        </table>
+    </div>      
 
   </main>
   <!-- footer with social network -->
@@ -81,6 +97,7 @@
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="js/statistiques.js"></script>
   <script src="js/index.js"></script>
 
   <script>
