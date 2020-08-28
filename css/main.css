@@ -112,6 +112,7 @@ textarea {
   align-items: center;
 }
 
+
 /* ========== style of Nav for all pages ========== */
 /* ------------------------------------------------ */
 nav {
@@ -160,13 +161,17 @@ h1 {
 #blocCarousel > img {
   width: 100%;
   height: 100%; 
+  border-radius: 10px;
 }
-
 
 /* ========== style of footer for all pages ========== */
 /* --------------------------------------------------- */
 #follow > a {
  padding: 10px; 
+}
+
+footer {
+  padding-top: 20px;
 }
 
 
