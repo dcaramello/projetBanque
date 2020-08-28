@@ -14,8 +14,8 @@ request.onreadystatechange = function() {
 
         // we create the line (tr) of the table with a for of
         for (stat of statistiques) {
-            console.log(stat);
             let tr = document.createElement("tr");
+                // we create column for each line with for in loop
                 for(prop in stat) {
                     let td = document.createElement("td");
                     td.innerText = stat[prop];
