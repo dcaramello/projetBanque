@@ -1,0 +1,14 @@
+{
+    "securite" :[
+        {"id": "1)","regle": "Choisir avec soin ses mots de passe "},
+        {"id": "2)","regle": "Mettre à jour régulièrement vos logiciels"},
+        {"id": "3)","regle": "Bien connaître ses utilisateurs et ses prestataires"},
+        {"id": "4)","regle": "Effectuer des sauvegardes régulières"},
+        {"id": "5)","regle": "Être aussi prudent avec son ordiphone (smartphone) ou sa tablette qu’avec son ordinateur"},
+        {"id": "6)","regle": "Protéger ses données lors de ses déplacements"},
+        {"id": "7)","regle": "Être prudent lors de l’utilisation de sa messagerie"},
+        {"id": "8)","regle": "Télécharger ses programmes sur les sites officiels des éditeurs"},
+        {"id": "9)","regle": "Être vigilant lors d’un paiement sur Internet"},
+        {"id": "10)","regle": "Séparer les usages personnels des usages professionnels"}
+    ]
+}
