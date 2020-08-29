@@ -1,5 +1,4 @@
-### Semaine 8 : Structurer ses données en JSON et les
-récupérer à l’aide d’AJAX
+### Semaine 8 : Structurer ses données en JSON et les récupérer à l’aide d’AJAX
 
 
 ## Spécifications fonctionnelles :
