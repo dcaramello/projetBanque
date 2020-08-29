@@ -46,8 +46,16 @@
     <a href="index.html"><img id="logoBank" src="img/bank.png" alt="logoBank"></a>
   
     <!-- burger menu for mobile interface with a nav's link -->
-    <i id="menuBurger" class="fa fa-bars fa-4x" aria-hidden="true"></i>
-    <button id="createAccount" type="button" class="btn btn-primary">Créer compte</button>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle fa fa-bars fa-4x" type="button" id="menuBurger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </button>
+      <div class="dropdown-menu" aria-labelledby="menuBurger">
+        <a class="dropdown-item" href="compte.html">Compte</a>
+        <a class="dropdown-item" href="statistiques.html">Statistiques</a>
+        <a class="dropdown-item" href="blog.html">Blog</a>
+        <a class="dropdown-item" href="virement.html">Virement</a>
+      </div>
+    </div>
   </nav>
   <!-- header with a title of website and 2 paragraph -->
   <header>
@@ -88,5 +96,8 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
