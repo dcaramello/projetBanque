@@ -113,6 +113,22 @@ textarea {
 }
 
 
+/* layer */
+
+#layer {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: larger;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 /* ========== style of Nav for all pages ========== */
 /* ------------------------------------------------ */
 nav {
@@ -170,9 +186,7 @@ h1 {
  padding: 10px; 
 }
 
-footer {
-  padding-top: 20px;
-}
+
 
 
 /* ========== MEDIA QUERIES ========== */
