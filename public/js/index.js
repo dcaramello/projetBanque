@@ -2,7 +2,7 @@
 
 // Variables
 // two array for images and description
-const IMAGES = ["img/follow.jpg", "img/securite.jpg", "img/transfert.jpg", "img/stats.jpg", "img/mobile.jpg"];
+const IMAGES = ["public/img/follow.jpg", "public/img/securite.jpg", "public/img/transfert.jpg", "public/img/stats.jpg", "public/img/mobile.jpg"];
 const DESCRIPTIONS = ["Retrouvez nous dans vos appli préférées", "Le meilleur de la sécurité pour vos données bancaires", "Transferer votre argent très facilement", "Suivez toutes les stats en direct", "Accedez a vos comptes partout"];
 
 // index for browse element in array and maxIndex for last value of index (4)
@@ -24,7 +24,7 @@ function playCarousel() {
 // Function to scroll through table elements
 function scrollIndex() {
     if (index < maxIndex) {
-        index +=1 
+        index +=1
     } else {
         index = 0;
     }
@@ -36,4 +36,3 @@ playCarousel();
 
 // rotate images in 3 secondes
 var rotateImage = setInterval(scrollIndex, 3000);
-

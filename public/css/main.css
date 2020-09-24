@@ -90,12 +90,12 @@ textarea {
 /* ========== Fonts for website ========== */
 @font-face {
   font-family: "gotham";
-  src:url("gotham.ttf");      
+  src:url("gotham.ttf");
 }
 
 @font-face {
   font-family: "mulish";
-  src:url("mulish.ttf");      
+  src:url("mulish.ttf");
 }
 
 /* ========== class for fonts ========== */
@@ -111,16 +111,32 @@ textarea {
   flex-direction: column;
   align-items: center;
 }
-
+body {
+  position: relative;
+  z-index: 100;
+}
 
 /* layer */
-
-#layer {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
+#blocLayer {
+  position: fixed;
+  top:50px;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  margin: auto;
+  z-index: 1001;
+}
+
+.layer {
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 5px;
+  opacity: 1;
+  width: 50%;
+  margin: auto;
+}
+
+#securite_layer {
+  margin: 30px;
 }
 
 h2 {
@@ -133,6 +149,8 @@ h2 {
 /* ------------------------------------------------ */
 nav {
   position: relative;
+  background-color: #000c26;
+
 }
 
 #navBar {
@@ -164,7 +182,28 @@ h1 {
   padding-top: 45px;
 }
 
+.jumbotron {
+  background: linear-gradient(#002066, #3f87a6);
+  border-bottom: 3px rgb(0, 50, 116) solid;
+  border-radius: 0;
+}
+
+.jumbotron > p {
+  color: white;
+}
+
+main {
+  background: linear-gradient(0.25turn, #00092f, #0033a4, #00092f);
+  padding-top: 0;
+}
+
+.row {
+
+}
+
 #blocCarousel {
+  border: 2px white solid;
+  border-radius: 10px;
   display: none;
   position: absolute;
   top: 60px;
@@ -175,18 +214,27 @@ h1 {
 
   /* image size */
 #blocCarousel > img {
-  width: 100%;
-  height: 100%; 
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#account {
+  border: 3px rgb(2, 162, 241)solid;
+  box-shadow: 10px 5px 5px rgb(86, 234, 249);
+
 }
 
 /* ========== style of footer for all pages ========== */
 /* --------------------------------------------------- */
 #follow > a {
- padding: 10px; 
+ padding: 10px;
 }
 
-
+footer {
+  background: linear-gradient(#3f87a6, #002066);
+  border-top: 3px rgb(0, 50, 116) solid;
+}
 
 
 /* ========== MEDIA QUERIES ========== */
@@ -200,7 +248,7 @@ h1 {
   }
   #menuBurger {
       display: none;
-  }  
+  }
   #createAccount {
       right: 20px;
       top: 5px;
@@ -213,7 +261,7 @@ h1 {
 /* desktop interface, medium screen */
 @media screen and (min-width: 992px) {
 
-}    
+}
 
 /* desktop interface, large screen */
 @media screen and (min-width: 1080px) {
@@ -233,8 +281,8 @@ h1 {
   }
   #blocHead {
       padding: 50px;
-      
-  }   
+
+  }
 }
 
 
@@ -417,4 +465,3 @@ h1 {
     page-break-after: avoid;
   }
 }
-
