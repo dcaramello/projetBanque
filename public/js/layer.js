@@ -1,4 +1,5 @@
 
+let blocLayer = document.getElementById("blocLayer");
 let layer = document.getElementById("layer");
 let blocCarousel = document.getElementById("blocCarousel");
 let createAccount = document.getElementById("createAccount");
@@ -14,14 +15,12 @@ menuBurger.style.visibility = "hidden";
 
 
 document.getElementById("hiddenLayer").addEventListener("click", function() {
-    console.log(layer);
-    layer.style.visibility = "hidden";
+    blocLayer.style.visibility = "hidden";
     blocCarousel.style.visibility = "visible";
     createAccount.style.visibility = "visible";
     navBar.style.visibility = "visible";
     logoBank.style.visibility = "visible";
     menuBurger.style.visibility = "visible";
-  
 });
 
 
@@ -32,24 +31,23 @@ let ul = document.getElementById("ul");
 
 // function that will create each rules with a loop
 request.onreadystatechange = function() {
-    
+
     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
 
-        let data = JSON.parse(this.response);           
+        let data = JSON.parse(this.response);
         let securite = data.securite;
-        
+
         for (regle of securite) {
-            let li = document.createElement("li");
+            let li = document.createElement("ul");
             let div = document.createElement("div");
-            div.innerText = regle.id;
             let p = document.createElement("p");
             p.innerText = regle.regle;
             li.appendChild(div);
             li.appendChild(p);
-            ul.appendChild(li);              
-        }              
-    } 
-    else {       
+            ul.appendChild(li);
+        }
+    }
+    else {
         console.log("une erreure est survenue");
     }
 };

@@ -90,12 +90,12 @@ textarea {
 /* ========== Fonts for website ========== */
 @font-face {
   font-family: "gotham";
-  src:url("gotham.ttf");      
+  src:url("gotham.ttf");
 }
 
 @font-face {
   font-family: "mulish";
-  src:url("mulish.ttf");      
+  src:url("mulish.ttf");
 }
 
 /* ========== class for fonts ========== */
@@ -111,16 +111,27 @@ textarea {
   flex-direction: column;
   align-items: center;
 }
-
+body {
+  position: relative;
+}
 
 /* layer */
-
-#layer {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
+#blocLayer {
+  position: fixed;
+  top:20px;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  margin: auto;
+}
+
+.layer {
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 5px;
+  opacity: 1;
+  width: 30%;
+  height: 65vh;
+  margin: auto;
 }
 
 h2 {
@@ -176,14 +187,14 @@ h1 {
   /* image size */
 #blocCarousel > img {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   border-radius: 10px;
 }
 
 /* ========== style of footer for all pages ========== */
 /* --------------------------------------------------- */
 #follow > a {
- padding: 10px; 
+ padding: 10px;
 }
 
 
@@ -200,7 +211,7 @@ h1 {
   }
   #menuBurger {
       display: none;
-  }  
+  }
   #createAccount {
       right: 20px;
       top: 5px;
@@ -213,7 +224,7 @@ h1 {
 /* desktop interface, medium screen */
 @media screen and (min-width: 992px) {
 
-}    
+}
 
 /* desktop interface, large screen */
 @media screen and (min-width: 1080px) {
@@ -233,8 +244,8 @@ h1 {
   }
   #blocHead {
       padding: 50px;
-      
-  }   
+
+  }
 }
 
 
@@ -417,4 +428,3 @@ h1 {
     page-break-after: avoid;
   }
 }
-
