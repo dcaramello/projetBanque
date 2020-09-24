@@ -1,4 +1,4 @@
-
+let securite_layer = document.getElementById("securite_layer");
 let blocLayer = document.getElementById("blocLayer");
 let layer = document.getElementById("layer");
 let blocCarousel = document.getElementById("blocCarousel");
@@ -32,24 +32,18 @@ let ul = document.getElementById("ul");
 // function that will create each rules with a loop
 request.onreadystatechange = function() {
 
-    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+    if (this.readyState === XMLHttpRequest.DONE) {
 
-        let data = JSON.parse(this.response);
-        let securite = data.securite;
-
-        for (regle of securite) {
-            let li = document.createElement("ul");
-            let div = document.createElement("div");
-            let p = document.createElement("p");
-            p.innerText = regle.regle;
-            li.appendChild(div);
-            li.appendChild(p);
-            ul.appendChild(li);
-        }
-    }
-    else {
-        console.log("une erreure est survenue");
-    }
+      if(this.status === 200) {
+        let data = (this.response);
+        let p = document.createElement("p")
+        p.innerText = data;
+        securite_layer.append(data);
+      }
+      else {
+        alert("une erreure est survenue");
+      }
+  }
 };
 
 request.open('GET', "securite.json", true);

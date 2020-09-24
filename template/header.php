@@ -26,11 +26,11 @@
 <body>
   <!-- header with a title of website and 2 paragraph -->
   <header>
-    <div id="blocHead" class="jumbotron">
-      <h1 class="display-10 gotham container text-primary">BANQUE NON POPULAIRE</h1>
-      <p class="lead mulish container">Découvrez les services digitaux de la banque non populaire.</p>
+    <div id="blocHead" class="jumbotron mb-0">
+      <h1 class="display-10 gotham container text-light">BANQUE NON POPULAIRE</h1>
+      <p class="lead mulish container">// Découvrez les services digitaux de la banque non populaire.</p>
       <hr class="my-4 mulish">
-      <p class=" container">Entrez dans l'ère du numérique en toute sécurité.</p>
+      <p class=" container">// Entrez dans l'ère du numérique en toute sécurité.</p>
     </div>
     <div id="blocCarousel">
       <img id="image" src="" alt="">

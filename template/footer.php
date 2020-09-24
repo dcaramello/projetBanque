@@ -1,7 +1,7 @@
   </main>
   <!-- footer with social network -->
   <footer>
-  <div id="foot" class="p-3 mb-2 bg-secondary text-white center">
+  <div id="foot" class="p-3 mb-0 text-white center">
     <div id="follow" class="center">
       <h3>Tous droits réservés</h3>
         <a  href="#"><img src="public/img/facebook.png" alt="facebook"></a></li>
