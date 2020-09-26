@@ -17,7 +17,7 @@ if (!empty($_GET)) {
   if (isset($compte)) {
 ?>
 
-<h2 class="text-light center">Voici votre <?php echo htmlspecialchars($compte["name"]); ?></h2>
+<h2 class="text-light center starcraft">Votre <?php echo htmlspecialchars($compte["name"]); ?></h2>
 
 <div class="justify-content-md-center center">
   <div class="card col-6 mb-5" style="width: 50rem;">

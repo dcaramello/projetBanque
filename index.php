@@ -10,6 +10,12 @@ include "data/acounts.php";
 ?>
 
 <!-- main -->
+
+<?php
+if (isset($_POST['login']) AND $_POST['login'] ==  "root") {
+  if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] ==  "root") { // Si le mot de passe est bon
+?>
+
 <!-- layer -->
 <div id="blocLayer">
   <div class="layer center">
@@ -21,10 +27,10 @@ include "data/acounts.php";
 </div>
 
 <div class="center gotham">
-  <h2 class="text-light">Vos comptes</h2>
+  <h2 class="text-light starcraft">Vos comptes</h2>
 </div>
 
-<div class="row justify-content-md-center mr-0">
+<div class="row justify-content-md-center">
 
   <?php
   // I get the accounts from acount.php and browse the tables with foreach
@@ -51,6 +57,26 @@ include "data/acounts.php";
   <?php
   endforeach
   ?>
+
+<?php
+}}
+  else {
+?>
+
+<div class=" container card col-12 col-lg-4 p-5 bg-dark">
+  <img src="public/img/security.png" class="card-img-top" alt="security">
+  <div class="card-body">
+    <h5 class="card-title text-light">Oups</h5>
+    <p class="card-text text-light">Veuillez saisir un login et un mot de passe correct.</p>
+  </div>
+  <a href="connexion.php"><button type="submit" class="btn btn-primary center">Connexion</button></a>
+</div>
+
+
+<?php
+}
+?>
+
 
 </div>
 <script src="public/js/layer.js"></script>

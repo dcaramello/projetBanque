@@ -8,13 +8,13 @@ require "template/header.php";
 ?>
 
 <!-- main with a statistic on the table since statistiques.json -->
-<div class="container">
+<div class="container p-3">
   <div class="center">
-    <h2 class="gotham">Statistiques</h2>
-    <p class="mulish font-italic">Suivez l'évolution des taux d'emprunts, du PIB et le cours de la bourse.</p>
+    <h2 class="starcraft text-light">Statistiques</h2>
+    <p class="mulish font-italic text-light">Suivez l'évolution des taux d'emprunts, du PIB et le cours de la bourse.</p>
   </div>
   <div id="classement">
-      <table class="table table-striped">
+      <table class="table table-striped mb-0 bg-secondary">
         <thead>
           <tr>
             <th scope="col">Année</th>

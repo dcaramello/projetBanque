@@ -9,9 +9,9 @@ require "template/header.php";
 
 <!-- main -->
 <div>
-  <h3 class="center gotham">Articles</h3>
+  <h3 class="center gotham starcraft pt-3 text-light">Articles</h3>
 </div>
-<div class="center" id="cards">
+<div class="center container" id="cards">
   <!-- articles of blog -->
 </div>
 
