@@ -121,7 +121,7 @@ textarea {
 }
 body {
   position: relative;
-  z-index: 100;
+  z-index: 1000;
 }
 
 /* layer */
@@ -131,7 +131,7 @@ body {
   width: 100%;
   height: 100vh;
   margin: auto;
-  z-index: 1001;
+  z-index: 2000;
 }
 
 .layer {
@@ -185,11 +185,15 @@ nav {
 
 /* ========== style of header for all pages ========== */
 /* --------------------------------------------------- */
+
+
 h1 {
   padding-top: 45px;
 }
 
 .jumbotron {
+  display: flex;
+  justify-content: center;
   background: linear-gradient(#002066, #3f87a6);
   border-bottom: 3px rgb(0, 50, 116) solid;
   border-radius: 0;
@@ -208,7 +212,6 @@ main {
   border: 2px white solid;
   border-radius: 10px;
   display: none;
-  position: absolute;
   top: 60px;
   right: 9%;
   width: 360px;

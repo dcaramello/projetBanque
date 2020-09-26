@@ -26,15 +26,18 @@
   <!-- header with a title of website and 2 paragraph -->
   <header>
     <div id="blocHead" class="jumbotron mb-0">
-      <a href="index.php"><h1 class="display-10 starcraft container text-light">BANQUE NON POPULAIRE</h1></a>
-      <p class="lead mulish container">>_ Découvrez les services digitaux de la banque non populaire.</p>
-      <hr class="my-4 mulish">
-      <p class=" container">>_ Entrez dans l'ère du numérique en toute sécurité.</p>
+      <div class="">
+        <a href="index.php"><h1 class="display-10 starcraft container text-light">BANQUE NON POPULAIRE</h1></a>
+        <p class="lead mulish container">>_ Découvrez les services digitaux de la banque non populaire.</p>
+        <hr class="my-4 mulish">
+        <p class=" container">>_ Entrez dans l'ère du numérique en toute sécurité.</p>
+      </div>
+      <div id="blocCarousel">
+        <img id="image" src="" alt="">
+        <div id="description" class="gotham center">
+      </div>
     </div>
-    <div id="blocCarousel">
-      <img id="image" src="" alt="">
-      <div id="description" class="gotham center">
-    </div>
+
   </header>
 
   <main>

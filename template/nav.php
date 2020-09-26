@@ -23,7 +23,7 @@
     <button class="btn btn-secondary dropdown-toggle fa fa-bars fa-4x" type="button" id="menuBurger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     </button>
     <div class="dropdown-menu" aria-labelledby="menuBurger">
-      <a class="dropdown-item" href="compte.php">Compte</a>
+      <a class="dropdown-item" href="connexion.php">Connexion</a>
       <a class="dropdown-item" href="statistiques.php">Statistiques</a>
       <a class="dropdown-item" href="blog.php">Blog</a>
       <a class="dropdown-item" href="virement.php">Virement</a>

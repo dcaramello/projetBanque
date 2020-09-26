@@ -16,7 +16,7 @@ include "data/acounts.php";
 <!-- account creation form with name, number, owner, and amount-->
 <div class="row justify-content-md-center">
 
-  <form class="text-light center col-4" action="new_account.php" method="post">
+  <form class="text-light center col- col-lg-4 " action="new_account.php" method="post">
 
       <div class="form-check mb-2" style="width: 18rem;">
         <input class="form-check-input" type="radio" name="name" id="exampleRadios1" value="Compte courant">
@@ -63,7 +63,7 @@ include "data/acounts.php";
 
 <!-- a card that displays account information "name", "owner" and "amount", number is predefined-->
 
-  <div class="col-4 center">
+  <div class="col- col-lg-4 center">
     <div>
       <h4 class="starcraft text-light">Votre compte</h4>
     </div>
