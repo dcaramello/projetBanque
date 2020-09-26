@@ -21,7 +21,7 @@ include "data/acounts.php";
 </div>
 
 <div class="center gotham">
-  <h2 class="text-light">Vos comptes</h2>
+  <h2 class="text-light starcraft">Vos comptes</h2>
 </div>
 
 <div class="row justify-content-md-center mr-0">

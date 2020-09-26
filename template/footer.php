@@ -3,7 +3,7 @@
   <footer>
   <div id="foot" class="p-3 mb-0 text-white center">
     <div id="follow" class="center">
-      <h3>Tous droits réservés</h3>
+      <h3 class="starcraft">Tous droits reserves</h3>
         <a  href="#"><img src="public/img/facebook.png" alt="facebook"></a></li>
         <a href="#"><img src="public/img/twitter.png" alt="twitter"></a></li>
         <a href="#"><img src="public/img/instagram.png" alt="instagram"></a></li>

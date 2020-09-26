@@ -3,9 +3,6 @@
   <div id="navBar">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="compte.php">compte</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="statistiques.php">Statistiques</a>
       </li>
       <li class="nav-item">
@@ -14,9 +11,12 @@
       <li class="nav-item">
         <a class="nav-link" href="virement.php">Virement</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="connexion.php">Connexion</a>
+      </li>
     </ul>
   </div>
-  <a href="index.php"><img id="logoBank" src="public/img/bank.png" alt="logoBank"></a>
+  <!-- <a href="index.php"><img id="logoBank" src="public/img/bank.png" alt="logoBank"></a> -->
 
   <!-- burger menu for mobile interface with a nav's link -->
   <div class="dropdown">
@@ -30,5 +30,5 @@
     </div>
   </div>
 
-  <button id="createAccount" type="button" class="btn btn-primary">Créer compte</button>
+  <a id="createAccount" type="button" class="btn btn-primary" href="new_account.php">Créer compte</a>
 </nav>
