@@ -15,7 +15,6 @@ CREATE TABLE utilisateurs (
   nom varchar(50) NOT NULL,
   mail varchar(30) NOT NULL,
   mdp varchar(30) NOT NULL,
-  connecté boolean NULL,
   compte_id int NOT NULL
 );
 
