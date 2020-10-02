@@ -76,9 +76,8 @@ if (isset($_POST['login']) AND $_POST['login'] ==  "root") {
 <?php
 }
 ?>
-
-
 </div>
+
 <script src="public/js/layer.js"></script>
 <!-- footer -->
 <?php

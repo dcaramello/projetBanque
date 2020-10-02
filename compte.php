@@ -11,7 +11,7 @@ require "template/header.php";
 <!-- main -->
 
 <?php
-if (!empty($_GET)) {
+if (!empty($_GET) AND isset($_GET["param"])) {
   $key = htmlspecialchars($_GET["param"]);
   $compte = get_accounts()[$key];
   if (isset($compte)) {
