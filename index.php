@@ -4,22 +4,12 @@ require "template/nav.php";
 require "template/header.php";
 include "data/acounts.php";
 
-
-// if $_SESSION is empty redirect to the connexion.php
-if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
-  header("location: connexion.php");
-}
-
-try{
-$db = new PDO('mysql:host=localhost;dbname=banque_PHP', 'banquePHP', 'root');
-}
-catch(PODException $e){
-  print "Erreur ! :".$getMessage()."<br>";
-  die();
-}
-
 // I get the accounts from acount.php and browse the tables with foreach
-$comptes = get_accounts();
+// Send the query to mysql
+$query = $db -> query("SELECT * FROM account");
+// Extract data from the query as an associative array
+$accounts = $query -> fetchAll(PDO::FETCH_ASSOC);
+var_dump($_SESSION["user"]);
 
 ?>
 
@@ -39,21 +29,19 @@ $comptes = get_accounts();
     </div>
 
     <div class="row justify-content-md-center">
-      <?php foreach ($comptes as $key => $value): ?>
+      <?php foreach ($accounts as $key => $account): ?>
       <!-- on each turn of the loop created a card with an account -->
         <div id="account" class="card col- col-sm-4 col-lg-3 m-5 mb-5" style="width: 18rem;">
           <img class="card-img-top pt-3" src="public/img/money.jpg" alt="money_picture">
           <div class="card-body">
-            <h5 class="card-title"><?php echo $value["name"]; ?></h5>
-            <p class="card-text"><?php echo $value["number"]; ?></p>
+            <h5 class="card-title">Type de compte : <?php echo $account["account_type"]; ?></h5>
+            <p class="card-text">Date d'ouverture : <?php echo $account["opening_date"]; ?></p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><?php echo $value["owner"]; ?></li>
-            <li class="list-group-item"><?php echo $value["amount"]; ?></li>
-            <li class="list-group-item"><?php echo $value["last_operation"]; ?></li>
+            <li class="list-group-item">Solde : <?php echo $account["amount"]; ?></li>
           </ul>
           <div class="card-body">
-            <a type="button" class="btn btn-primary card-link text-light" id="account_link" href='compte.php<?php echo "?param=$key"; ?>'>Voir</a>
+            <a name="" type="button" class="btn btn-primary card-link text-light" id="account_link" href='compte.php<?php echo "?param=$key"; ?>'>Voir</a>
           </div>
         </div>
       <?php

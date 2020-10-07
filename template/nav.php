@@ -1,12 +1,26 @@
 <?php
-// Disconnected and redirected to connexion.php if click on disconnection
+
 session_start();
+
+// if $_SESSION is empty redirect to the connexion.php
+if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
+  header("location: connexion.php");
+}
+
+try{
+$db = new PDO('mysql:host=localhost;dbname=banque_PHP', 'banquePHP', 'root');
+}
+catch(PODException $e){
+  print "Erreur ! :".$getMessage()."<br>";
+  die();
+}
+
+// Disconnected and redirected to connexion.php if click on disconnection
 if(isset($_POST["deconnexion"])){
     session_destroy();
     header("location: connexion.php");
 }
-var_dump($_SESSION["user"])
-;?>
+?>
 
 <!-- nav with all links for differents pages of website for tablet and desktop interface, and a logo with index's link' -->
 <nav>
