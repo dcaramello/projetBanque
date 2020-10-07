@@ -28,13 +28,13 @@
     <div id="blocHead" class="jumbotron mb-0">
       <div class="">
         <a href="index.php"><h1 class="display-10 starcraft container text-light">BANQUE NON POPULAIRE</h1></a>
-        <p class="lead mulish container">>_ Découvrez les services digitaux de la banque non populaire.</p>
+        <p class="lead mulish container text-light">>_ Découvrez les services digitaux de la banque non populaire.</p>
         <hr class="my-4 mulish">
-        <p class=" container">>_ Entrez dans l'ère du numérique en toute sécurité.</p>
+        <p class="container text-light">>_ Entrez dans l'ère du numérique en toute sécurité.</p>
       </div>
       <div id="blocCarousel">
         <img id="image" src="" alt="">
-        <div id="description" class="gotham center">
+        <div id="description" class="gotham center text-light">
       </div>
     </div>
 

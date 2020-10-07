@@ -70,12 +70,12 @@ include "data/acounts.php";
     <div id="account" class="card" style="width: 18rem;">
       <img class="card-img-top pt-3" src="public/img/money.jpg" alt="money_picture">
       <div class="card-body">
-        <h5 class="card-title">Compte : <?php echo $compte["name"]; ?></h5>
+        <h5 class="card-title">Compte : <?php echo htmlspecialchars($compte["name"]); ?></h5>
         <p class="card-text">Numéro : N:0132520024 fr 45</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Propriétaire : <?php echo $compte["owner"]; ?></li>
-        <li class="list-group-item">Solde : <?php echo $compte["amount"]; ?></li>
+        <li class="list-group-item">Propriétaire : <?php echo htmlspecialchars($compte["owner"]); ?></li>
+        <li class="list-group-item">Solde : <?php echo htmlspecialchars($compte["amount"]); ?></li>
         <li class="list-group-item">Derniére opération : Pas d'opération</li>
       </ul>
     </div>

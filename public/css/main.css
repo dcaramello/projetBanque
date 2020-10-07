@@ -156,7 +156,8 @@ h2 {
 /* ========== style of Nav for all pages ========== */
 /* ------------------------------------------------ */
 nav {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   background-color: #000c26;
 }
 
@@ -165,10 +166,10 @@ nav {
   display: none;
 }
 
-#createAccount {
-  position: absolute;
-  right : 1px;
-  top : 1px;
+#disconnect {
+  margin: 3px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #logoBank {
@@ -204,7 +205,7 @@ h1 {
 }
 
 main {
-  background: linear-gradient(0.25turn, #00092f, #0033a4, #00092f);
+  background-color: #3f87a6;
   padding-top: 0;
 }
 
@@ -260,7 +261,7 @@ footer {
   #menuBurger {
       display: none;
   }
-  #createAccount {
+  #disconnect {
       right: 20px;
       top: 5px;
   }
