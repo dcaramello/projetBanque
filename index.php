@@ -4,13 +4,18 @@ require "template/nav.php";
 require "template/header.php";
 include "data/acounts.php";
 
-// I get the accounts from acount.php and browse the tables with foreach
-// Send the query to mysql
-$query = $db -> query("SELECT * FROM account");
-// Extract data from the query as an associative array
-$accounts = $query -> fetchAll(PDO::FETCH_ASSOC);
-var_dump($_SESSION["user"]);
+$query = $db->prepare(
+  "SELECT u.lastname, u.firstname, a.account_type, a.opening_date, a.amount
+  FROM User AS u
+  INNER JOIN Account AS a
+  ON u.id = a.user_id AND u.id = :user_id"
+);
 
+$execute = $query->execute([
+  "user_id"=>$_SESSION["user"]["id"]
+]);
+
+$accounts=$query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!-- main -->
@@ -34,7 +39,8 @@ var_dump($_SESSION["user"]);
         <div id="account" class="card col- col-sm-4 col-lg-3 m-5 mb-5" style="width: 18rem;">
           <img class="card-img-top pt-3" src="public/img/money.jpg" alt="money_picture">
           <div class="card-body">
-            <h5 class="card-title">Type de compte : <?php echo $account["account_type"]; ?></h5>
+            <h3 class="card-title"><?php echo $account["lastname"]." ".$account["firstname"]; ?></h3>
+            <h5 class="card-title"><?php echo $account["account_type"]; ?></h5>
             <p class="card-text">Date d'ouverture : <?php echo $account["opening_date"]; ?></p>
           </div>
           <ul class="list-group list-group-flush">

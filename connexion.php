@@ -1,6 +1,6 @@
 <!-- title -->
 <?php
-$result = [];
+
 $site_title = "La Banque non Populaire";
 require "template/header.php";
 
@@ -20,7 +20,7 @@ if(isset($_POST["connexion"])){
   );
 
 
-  $result = $query->execute([
+  $execute = $query->execute([
     "email"=>$_POST["email"]
   ]);
 

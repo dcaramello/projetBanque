@@ -15,6 +15,19 @@ catch(PODException $e){
   die();
 }
 
+// request to retrieve the user's email to display it in the nav
+$query = $db->prepare(
+  "SELECT email
+  FROM User
+  WHERE email = :email"
+);
+
+$execute = $query->execute([
+  "email"=>$_SESSION["user"]["email"]
+]);
+
+$mail=$query->fetch(PDO::FETCH_ASSOC);
+
 // Disconnected and redirected to connexion.php if click on disconnection
 if(isset($_POST["deconnexion"])){
     session_destroy();
@@ -51,11 +64,13 @@ if(isset($_POST["deconnexion"])){
       <a class="dropdown-item" href="blog.php">Blog</a>
       <a class="dropdown-item" href="virement.php">Virement</a>
       <a class="dropdown-item" href="new_account.php">Créer compte</a>
+      <a href="#"></a>
     </div>
   </div>
 
+<!-- disconnects the session and displays the connected account -->
   <div id="disconnect">
-    <a class="mr-1" href="connexion.php"><button type="button" name="button" class="btn btn-Success">Connexion</button></a>
+    <span class="text-light mt-2 mr-2"><?php echo $mail["email"]; ?></span>
     <form method="POST" class="mb-0">
       <button  type="submit" name="deconnexion" class="btn btn-danger">Déconnexion</button>
     </form>
