@@ -5,7 +5,7 @@ require "template/header.php";
 include "data/acounts.php";
 
 $query = $db->prepare(
-  "SELECT u.lastname, u.firstname, a.account_type, a.opening_date, a.amount
+  "SELECT a.id, u.lastname, u.firstname, a.account_type, a.opening_date, a.amount
   FROM User AS u
   INNER JOIN Account AS a
   ON u.id = a.user_id AND u.id = :user_id"
@@ -36,7 +36,7 @@ $accounts=$query->fetchAll(PDO::FETCH_ASSOC);
     <div class="row justify-content-md-center">
       <?php foreach ($accounts as $key => $account): ?>
       <!-- on each turn of the loop created a card with an account -->
-        <div id="account" class="card col- col-sm-4 col-lg-3 m-5 mb-5" style="width: 18rem;">
+        <div class="card col- col-sm-4 col-lg-3 m-5 mb-5 animate__animated animate__bounceInLeft" style="width: 18rem;">
           <img class="card-img-top pt-3" src="public/img/money.jpg" alt="money_picture">
           <div class="card-body">
             <h3 class="card-title"><?php echo $account["lastname"]." ".$account["firstname"]; ?></h3>
@@ -47,7 +47,11 @@ $accounts=$query->fetchAll(PDO::FETCH_ASSOC);
             <li class="list-group-item">Solde : <?php echo $account["amount"]; ?></li>
           </ul>
           <div class="card-body">
-            <a name="" type="button" class="btn btn-primary card-link text-light" id="account_link" href='compte.php<?php echo "?param=$key"; ?>'>Voir</a>
+
+            <!-- by clicking we retrieve the account id -->
+            <a name="" type="button" class="btn btn-primary card-link text-light" id="account_link"
+              href="compte.php<?php echo '?account_id='.$account["id"];?>">Voir
+            </a>
           </div>
         </div>
       <?php

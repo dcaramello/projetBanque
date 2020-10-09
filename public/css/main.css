@@ -196,7 +196,7 @@ h1 {
   display: flex;
   justify-content: center;
   background: linear-gradient(#002066, #3f87a6);
-  border-bottom: 3px rgb(0, 50, 116) solid;
+  border-bottom: white solid;
   border-radius: 0;
 }
 
@@ -229,10 +229,6 @@ height: 100%;
 /* =========== style of main for all pages =========== */
 /* --------------------------------------------------- */
 
-#account {
-  border: 3px rgb(2, 162, 241)solid;
-  box-shadow: 10px 5px 5px rgb(86, 234, 249);
-}
 
 .compte {
   background-color: rgb(154, 154, 154);
@@ -246,7 +242,7 @@ height: 100%;
 
 footer {
   background: linear-gradient(#3f87a6, #002066);
-  border-top: 3px rgb(0, 50, 116) solid;
+  border-top: 1px white solid;
 }
 
 /* ========== MEDIA QUERIES ========== */
