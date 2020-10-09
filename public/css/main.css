@@ -156,7 +156,8 @@ h2 {
 /* ========== style of Nav for all pages ========== */
 /* ------------------------------------------------ */
 nav {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   background-color: #000c26;
 }
 
@@ -165,10 +166,10 @@ nav {
   display: none;
 }
 
-#createAccount {
-  position: absolute;
-  right : 1px;
-  top : 1px;
+#disconnect {
+  margin: 3px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #logoBank {
@@ -195,7 +196,7 @@ h1 {
   display: flex;
   justify-content: center;
   background: linear-gradient(#002066, #3f87a6);
-  border-bottom: 3px rgb(0, 50, 116) solid;
+  border-bottom: white solid;
   border-radius: 0;
 }
 
@@ -204,7 +205,7 @@ h1 {
 }
 
 main {
-  background: linear-gradient(0.25turn, #00092f, #0033a4, #00092f);
+  background-color: #3f87a6;
   padding-top: 0;
 }
 
@@ -228,10 +229,6 @@ height: 100%;
 /* =========== style of main for all pages =========== */
 /* --------------------------------------------------- */
 
-#account {
-  border: 3px rgb(2, 162, 241)solid;
-  box-shadow: 10px 5px 5px rgb(86, 234, 249);
-}
 
 .compte {
   background-color: rgb(154, 154, 154);
@@ -245,7 +242,7 @@ height: 100%;
 
 footer {
   background: linear-gradient(#3f87a6, #002066);
-  border-top: 3px rgb(0, 50, 116) solid;
+  border-top: 1px white solid;
 }
 
 /* ========== MEDIA QUERIES ========== */
@@ -260,7 +257,7 @@ footer {
   #menuBurger {
       display: none;
   }
-  #createAccount {
+  #disconnect {
       right: 20px;
       top: 5px;
   }
