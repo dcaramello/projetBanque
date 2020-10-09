@@ -8,91 +8,78 @@ require "template/nav.php";
 require "template/header.php";
 include "data/acounts.php";
 ?>
-
-<!-- main -->
-
 <h2 class="starcraft center text-light">Nouveau compte</h2>
-
-<!-- account creation form with name, number, owner, and amount-->
 <div class="row justify-content-md-center">
 
-  <form class="text-light center col- col-lg-4 " action="new_account.php" method="post">
+<!-- account creation form -->
+<form class="text-light center col- col-lg-4 " action="new_account.php" method="post">
+  <div>
+    <p class="center">Montant</p>
+    <input type="number" name="amount">
+  </div>
+  <div class="mt-3">
+    <p class="center">Type de compte</p>
+    <select name="account_type">
+      <option value="compte courant">Compte courant</option>
+      <option value="Livret A">Livret A</option>
+      <option value="Livret A">PEL</option>
+    </select>
+  </div>
+  <div>
+    <input class="btn btn-success mt-5" type="submit" name="new_account" value="Envoyer">
+  </div>
+</form>
 
-      <div class="form-check mb-2" style="width: 18rem;">
-        <input class="form-check-input" type="radio" name="name" id="exampleRadios1" value="Compte courant">
-        <label class="form-check-label" for="exampleRadios1">
-          Compte courant
-        </label>
-      </div>
+<?php
+
+// if you click on create and the amount is greater than 50, the account is created and displayed
+// the account is created with the input of the form, the user ID is retrieved from the session
+if(!empty($_POST) && isset($_POST["new_account"])):
+  if ($_POST["amount"] > 50):
+  $new_account = array_map("htmlspecialchars", $_POST);
+
+  $query = $db -> prepare(
+      "INSERT INTO Account(amount, opening_date, account_type, user_id)
+      VALUES(:amount, NOW(), :account_type, :user_id)"
+    );
+
+    $result = $query -> execute([
+      "amount"=>$_POST["amount"],
+      "account_type"=>$_POST["account_type"],
+      "user_id"=>$_SESSION["user"]["id"]
+    ]);
 
 
-      <div class="form-check mb-2" style="width: 18rem;">
-        <input class="form-check-input" type="radio" name="name" id="exampleRadios2" value="Livret A">
-        <label class="form-check-label" for="exampleRadios2">
-          Livret A
-        </label>
-      </div>
-
-
-      <div class="form-check mb-2" style="width: 18rem;">
-        <input class="form-check-input" type="radio" name="name" id="exampleRadios3" value="PEL">
-        <label class="form-check-label" for="exampleRadios3">
-          PEL
-        </label>
-      </div>
-
-      <div class="form-row mb-2" style="width: 18rem;">
-        <label>Nom</label>
-        <input type="text" class="form-control" name="owner">
-    </div>
-
-    <div class="form-row mb-2" style="width: 18rem;">
-      <label>Montant</label>
-      <input type="number" class="form-control" name="amount" min="50" placeholder="50">
-    </div>
-
-    <button class="btn btn-primary" type="submit" name="créer" value="créer">Créer</button>
-  </form>
-
-<!-- if we click on "créer" the values ​​entered in the form are stored in the array $compte with array_map -->
-  <?php
-  $compte = "Veuillez créer un compte";
-  if (isset($_POST["créer"]) AND !empty($_POST["créer"])) {
-    $compte = array_map("htmlspecialchars", $_POST);
+  // Send the query to mysql
+  $query = $db -> query("SELECT * FROM account");
+  // Extract data from the query as an associative array
+  $accounts = $query -> fetchAll(PDO::FETCH_ASSOC);
   ?>
 
-<!-- a card that displays account information "name", "owner" and "amount", number is predefined-->
-
-  <div class="col- col-lg-4 center">
+<div class="col- col-lg-4 center">
     <div>
       <h4 class="starcraft text-light">Votre compte</h4>
     </div>
     <div id="account" class="card" style="width: 18rem;">
       <img class="card-img-top pt-3" src="public/img/money.jpg" alt="money_picture">
       <div class="card-body">
-        <h5 class="card-title">Compte : <?php echo htmlspecialchars($compte["name"]); ?></h5>
-        <p class="card-text">Numéro : N:0132520024 fr 45</p>
+        <h5 class="card-title">Compte : <?php echo $new_account["account_type"]; ?></h5>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Propriétaire : <?php echo htmlspecialchars($compte["owner"]); ?></li>
-        <li class="list-group-item">Solde : <?php echo htmlspecialchars($compte["amount"]); ?></li>
-        <li class="list-group-item">Derniére opération : Pas d'opération</li>
+        <li class="list-group-item">Montant : <?php echo $new_account["amount"]; ?></li>
       </ul>
     </div>
   </div>
 
-  <?php
-  }
-  ?>
+<?php
+  endif;
+endif;
+?>
 </div>
-
-
 <div class="center mt-5 pb-5">
   <a type="button" class="btn btn-primary" href="index.php">Retour</a>
 </div>
 
-
-<!-- footer -->
 <?php
 require "template/footer.php";
 ?>

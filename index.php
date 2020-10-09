@@ -11,7 +11,7 @@ $query = $db->prepare(
   ON u.id = a.user_id AND u.id = :user_id"
 );
 
-$execute = $query->execute([
+$result = $query->execute([
   "user_id"=>$_SESSION["user"]["id"]
 ]);
 
