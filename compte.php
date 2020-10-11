@@ -22,7 +22,7 @@ if (!empty($_GET["account_id"]) AND isset($_GET["account_id"])):
     ON a.id = o.account_id AND a.id = :account_id"
   );
 
-  $execute = $query->execute([
+  $result = $query->execute([
     "account_id"=>$_GET["account_id"]
   ]);
 

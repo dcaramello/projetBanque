@@ -228,7 +228,9 @@ height: 100%;
 
 /* =========== style of main for all pages =========== */
 /* --------------------------------------------------- */
-
+.oui_non{
+  display: flex;
+}
 
 .compte {
   background-color: rgb(154, 154, 154);

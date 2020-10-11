@@ -22,7 +22,7 @@ $query = $db->prepare(
   WHERE email = :email"
 );
 
-$execute = $query->execute([
+$result = $query->execute([
   "email"=>$_SESSION["user"]["email"]
 ]);
 
