@@ -6,7 +6,6 @@
 <?php
 require "template/nav.php";
 require "template/header.php";
-include "data/acounts.php";
 ?>
 <h2 class="starcraft center text-light">Nouveau compte</h2>
 <div class="row justify-content-md-center">
@@ -56,7 +55,7 @@ if(!empty($_POST) && isset($_POST["new_account"])):
   $accounts = $query -> fetchAll(PDO::FETCH_ASSOC);
   ?>
 
-<div class="col- col-lg-4 center">
+  <div class="col- col-lg-4 center animate__animated animate__bounceIn">
     <div>
       <h4 class="starcraft text-light">Votre compte</h4>
     </div>

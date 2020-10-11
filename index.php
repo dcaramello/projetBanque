@@ -2,7 +2,7 @@
 $site_title = "La Banque non Populaire";
 require "template/nav.php";
 require "template/header.php";
-include "data/acounts.php";
+
 
 $query = $db->prepare(
   "SELECT a.id, u.lastname, u.firstname, a.account_type, a.opening_date, a.amount
@@ -16,6 +16,7 @@ $result = $query->execute([
 ]);
 
 $accounts=$query->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!-- main -->
@@ -46,12 +47,16 @@ $accounts=$query->fetchAll(PDO::FETCH_ASSOC);
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Solde : <?php echo $account["amount"]; ?></li>
           </ul>
+          <!-- by clicking we retrieve the account id -->
           <div class="card-body">
-
-            <!-- by clicking we retrieve the account id -->
-            <a name="" type="button" class="btn btn-primary card-link text-light" id="account_link"
-              href="compte.php<?php echo '?account_id='.$account["id"];?>">Voir
+            <a name="" type="button" class="btn btn-primary card-link text-light m-1" id="account_link"
+              href="compte.php<?php echo '?account_id='.$account["id"];?>">Voir le compte
             </a>
+            <form class="" action="index.html" method="POST">
+              <a name="delete" type="button" class="btn btn-danger card-link text-light m-1" id="account_link"
+                href="delete_account.php<?php echo '?account_id='.$account["id"];?>">Supprimer le compte
+              </a>
+            </form>
           </div>
         </div>
       <?php
