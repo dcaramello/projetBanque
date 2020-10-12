@@ -4,8 +4,8 @@
 <!-- nav and header for all pages-->
 <?php
 require "data/acounts.php";
-require "template/nav.php";
-require "template/header.php";
+require "view/template/nav.php";
+require "view/template/header.php";
 ?>
 
 <!-- main -->
@@ -87,5 +87,5 @@ else:
 <!-- footer -->
 <?php
 endif;
-require "template/footer.php";
+require "view/template/footer.php";
 ?>
