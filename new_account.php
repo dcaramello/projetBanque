@@ -4,8 +4,8 @@
 <!-- nav and header for all pages-->
 <!-- and acounts.php -->
 <?php
-require "template/nav.php";
-require "template/header.php";
+require "view/template/nav.php";
+require "view/template/header.php";
 ?>
 <h2 class="starcraft center text-light">Nouveau compte</h2>
 <div class="row justify-content-md-center">
@@ -80,5 +80,5 @@ endif;
 </div>
 
 <?php
-require "template/footer.php";
+require "view/template/footer.php";
 ?>

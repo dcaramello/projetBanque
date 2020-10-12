@@ -1,7 +1,7 @@
 <?php
 $site_title = "La Banque non Populaire";
-require "template/nav.php";
-require "template/header.php";
+require "view/template/nav.php";
+require "view/template/header.php";
 
 
 $query = $db->prepare(
@@ -69,5 +69,5 @@ $accounts=$query->fetchAll(PDO::FETCH_ASSOC);
 <?php
 
 $script = "<script src='public/js/layer.js'></script>";
-require "template/footer.php";
+require "view/template/footer.php";
 ?>

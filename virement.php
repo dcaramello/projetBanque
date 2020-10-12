@@ -3,8 +3,8 @@
 
 <!-- nav and header for all pages-->
 <?php
-require "template/nav.php";
-require "template/header.php";
+require "view/template/nav.php";
+require "view/template/header.php";
 ?>
 
 <!-- main -->
@@ -12,5 +12,5 @@ require "template/header.php";
 
 <!-- footer -->
 <?php
-require "template/footer.php";
+require "/view/template/footer.php";
 ?>
