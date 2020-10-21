@@ -76,7 +76,7 @@ endif;
 ?>
 </div>
 <div class="center mt-5 pb-5">
-  <a type="button" class="btn btn-primary" href="index.php">Retour</a>
+  <a type="button" class="btn btn-primary" href="home.php">Retour</a>
 </div>
 
 <?php

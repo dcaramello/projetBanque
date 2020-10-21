@@ -1,5 +1,3 @@
-<!-- main -->
-<!-- layer -->
 <div id="blocLayer">
   <div class="layer center">
     <h2 class="gotham">Règles de sécurité</h2>
@@ -29,9 +27,9 @@
       <!-- by clicking we retrieve the account id -->
       <div class="card-body">
         <a name="" type="button" class="btn btn-primary card-link text-light m-1" id="account_link"
-          href="compte.php<?php echo '?account_id='.$account["id"];?>">Voir le compte
+          href="operation.php<?php echo '?account_id='.$account["id"];?>">Voir le compte
         </a>
-        <form class="" action="index.html" method="POST">
+        <form class="" action="" method="POST">
           <a name="delete" type="button" class="btn btn-danger card-link text-light m-1" id="account_link"
             href="delete_account.php<?php echo '?account_id='.$account["id"];?>">Supprimer le compte
           </a>
