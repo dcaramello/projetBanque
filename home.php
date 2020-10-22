@@ -5,10 +5,9 @@ require "view/template/nav.php";
 require "view/template/header.php";
 require "model/accountManager.php";
 
-$accountModel = new AccountModel();
+$accountManager = new AccountManager();
 
-$accounts = $accountModel->getAccountByUserId($db, $_SESSION["user"]["id"]);
-
+$accounts = $accountManager->getAccountByUserId($db, $_SESSION["user"]["id"]);
 
 $script = "<script src='public/js/layer.js'></script>";
 require "view/homeView.php";

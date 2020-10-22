@@ -1,13 +1,12 @@
 <?php
 
-class Operation 
-{
-    protected int $id;
-    protected string $operation_type;
-    protected float $amount;
-    protected string $registered;
-    protected string $label;
-    protected int $account_id;
+class Operation {
+    protected ?int $id;
+    protected ?string $operation_type;
+    protected ?float $amount;
+    protected ?string $registered;
+    protected ?string $label;
+    protected ?int $account_id;
 
     // --
 
@@ -29,7 +28,7 @@ class Operation
 
     public function setAmount(float $amount):self {
         $this->amount = $amount;
-        return $$this;
+        return $this;
     }
     public function getAmount() {
         return $this->amount;
@@ -43,9 +42,11 @@ class Operation
         return $this->registered;
     }
 
-    public function setLabel(string $label):self {
+    public function setLabel(string $label = null):self {
+        if ($label){
         $this->label = $label;
         return $this;
+        }
     }
     public function getLabel() {
         return $this->label;
@@ -68,8 +69,9 @@ class Operation
         }
     }
 
-    public function __construct(array $data) {
-        $this->hydrate($data);
+    public function __construct(array $data = null) {
+        if ($data) {
+            $this->hydrate($data);
+        }
     }
-
 }

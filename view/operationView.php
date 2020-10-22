@@ -1,5 +1,12 @@
 <?php
+$site_title = "La Banque non Populaire";
+require "view/template/nav.php";
+require "view/template/header.php";
+
+foreach ($operations as $operation => $value):
+endforeach;
   if (!isset($value)):
+    
 ?>
 
 <div class=" p-5 justify-content-md-center center animate__animated animate__bounceInUp">
@@ -27,7 +34,8 @@ else:
       <h3 class="card-title">Solde du compte : <?php echo $value["a_amount"] ?></h3>
       <h4 class="card-text center">Opérations effectuées :</h4>
 
-      <?php foreach ($operations as $operation): ?>
+      <?php 
+      foreach ($operations as $operation): ?>
       <p class="card-text center"><?php echo $operation["o_amount"]. " : " .$operation["o_label"];
       // condition if the lable is NULL, and if the amount is positive or negative
       if ($operation["o_label"]===NULL):
@@ -52,4 +60,5 @@ else:
 </div>
 <?php
 endif;
+require "view/template/footer.php";
 ?>

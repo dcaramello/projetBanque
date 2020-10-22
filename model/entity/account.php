@@ -14,7 +14,7 @@ class Account
         $this->id = $id;
         return $this;
     }
-    public function getIg() {
+    public function getId() {
         return $this->id;
     }
 
@@ -54,13 +54,15 @@ class Account
         foreach ($data as $key => $value) {
             $method = "set" . ucfirst($key);
             if (method_exists($this, $method)) {
-                $this->method($value);
+                $this->$method($value);
             }
         }
     }
 
-    public function __construct(array $data) {
-        $this->hydrate($data);
+    public function __construct(array $data = null) {
+        if ($data) {
+            $this->hydrate($data);
+        }
     } 
 
 }
