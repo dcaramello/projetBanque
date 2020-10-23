@@ -1,30 +1,16 @@
-<!-- title -->
 <?php
 
 $site_title = "La Banque non Populaire";
-require "template/header.php";
+require "view/template/header.php";
+require "model/userManager.php";
+
+
+$userModel = new UserModel();
 
 // if a form is submitted we connect to the database
 if(isset($_POST["connexion"])){
-  try{
-  $db = new PDO('mysql:host=localhost;dbname=banque_PHP', 'banquePHP', 'root');
-  }
-  catch(PDOException $e){
-    print "Erreur !: ".$getMessage()." <br>";
-    die();
-  }
 
-  $query = $db->prepare(
-    "SELECT * FROM User
-    WHERE email = :email"
-  );
-
-
-  $execute = $query->execute([
-    "email"=>$_POST["email"]
-  ]);
-
-  $user=$query->fetch(PDO::FETCH_ASSOC);
+$user = $userModel->getUserByEmail($_POST["email"]);
 
   // if user as been found in database and if password match
   if($user){
@@ -32,29 +18,11 @@ if(isset($_POST["connexion"])){
     if(password_verify($_POST["mot_de_passe"], $user["password"])){
       session_start();
       $_SESSION["user"] = $user;
-      header("location: index.php");
+      header("location: home.php");
     }
   }
 }
 
- ?>
+require "view/connexionView.php";
+require "view/template/footer.php";
 
-<!-- main -->
-
-<h3 class="text-light center starcraft pt-5" >Veuillez vous connecter pour acceder a l'application :</h3>
-
-<form class="container mb-0 p-5" action="" method="post">
-  <div class="form-group text-light">
-    <label>identifiant</label>
-    <input type="text" class="form-control" name="email">
-  </div>
-  <div class="form-group text-light">
-    <label>Mot de passe</label>
-    <input type="password" class="form-control" name="mot_de_passe">
-  </div>
-  <button type="submit" class="btn btn-primary" name="connexion">Connexion</button>
-</form>
-
-<?php
-require "template/footer.php";
-?>
