@@ -8,7 +8,7 @@ class OperationManager{
     $this->db = new PDO('mysql:host=localhost;dbname=banque_PHP', 'banquePHP', 'root');
   }
 
-  public function getOperations(string $data) {
+  public function getOperations($data) {
 
     $query = $this->db->prepare(
       "SELECT * FROM operation
@@ -19,8 +19,8 @@ class OperationManager{
       "account_id"=>$data
     ]);
 
+    // return $query->fetchAll(PDO::FETCH_ASSOC);
     return $query->fetchAll(PDO::FETCH_CLASS, "Operation");
-    
   }
 }
     

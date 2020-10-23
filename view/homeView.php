@@ -27,7 +27,7 @@
       <!-- by clicking we retrieve the account id -->
       <div class="card-body">
         <a name="" type="button" class="btn btn-primary card-link text-light m-1" id="account_link"
-          href="operation.php<?php echo '?account_id='.$account["id"];?>">Voir le compte
+          href="single.php<?php echo '?account_id='.$account["id"];?>">Voir le compte
         </a>
         <form class="" action="" method="POST">
           <a name="delete" type="button" class="btn btn-danger card-link text-light m-1" id="account_link"

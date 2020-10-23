@@ -8,7 +8,7 @@
     <form class="p-5 justify-content-md-center" action="" method="POST">
       <div class="">
         <input name="oui" type="submit" class="btn btn-danger card-link text-light mb-3 mt-3" style="width: 10rem" id="account_link" value="Oui">
-        <a type="button" class="btn btn-primary card-link text-light mb-3 mt-3" style="width: 10rem" id="account_link" href="index.php?param=account">Non</a>
+        <a type="button" class="btn btn-primary card-link text-light mb-3 mt-3" style="width: 10rem" id="account_link" href="home.php?param=account">Non</a>
       </div>
     </form>
 

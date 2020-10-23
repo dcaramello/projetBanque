@@ -12,8 +12,7 @@ if (!empty($_GET["account_id"]) AND isset($_GET["account_id"])) {
     $account = $accountManager->getAccount($_GET["account_id"]);
     // Récupère les opération du compte par l'id passé dans l'url
     $operations = $operationManager->getOperations($_GET["account_id"]);
-    var_dump($operations);
 }
 
-require "view/operationView.php";
+require "view/singleView.php";
 

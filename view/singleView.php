@@ -2,11 +2,8 @@
 $site_title = "La Banque non Populaire";
 require "view/template/nav.php";
 require "view/template/header.php";
-
-foreach ($operations as $operation => $value):
-endforeach;
-  if (!isset($value)):
-    
+  // if not operations show this card
+  if (!$operations):
 ?>
 
 <div class=" p-5 justify-content-md-center center animate__animated animate__bounceInUp">
@@ -24,24 +21,22 @@ endforeach;
 
 <?php
 else:
-?>
+foreach ($account as $key => $value): ?>
 
-<h2 class="text-light center starcraft">Votre <?php echo $value["account_type"]; ?></h2>
+<!-- if operations show this card with detail -->
+<h2 class="text-light center starcraft">Votre <?php echo $value->getAccount_type(); endforeach; ?></h2>
 
-<div class="justify-content-md-center center animate__animated animate__bounceInUp">
+<div class="justify-content-md-center center animate__animated animate__bounceInUp p-5">
   <div class="card col-6 mb-5" style="width: 50rem;">
     <div class="card-body">
-      <h3 class="card-title">Solde du compte : <?php echo $value["a_amount"] ?></h3>
       <h4 class="card-text center">Opérations effectuées :</h4>
-
-      <?php 
-      foreach ($operations as $operation): ?>
-      <p class="card-text center"><?php echo $operation["o_amount"]. " : " .$operation["o_label"];
+      <?php foreach ($operations as $key => $operation): ?>
+      <p class="card-text center"><?php echo $operation->getAmount() . " : " .$operation->getLabel();
       // condition if the lable is NULL, and if the amount is positive or negative
-      if ($operation["o_label"]===NULL):
-        if ($operation["o_amount"] > 0):
+      if ($operation->getLabel()===NULL):
+        if ($operation->getAmount() > 0):
           echo "Dépôt";
-        elseif ($operation["o_amount"] < 0):
+        elseif ($operation->getAmount() < 0):
           echo "Retrait";
         endif;
       endif;

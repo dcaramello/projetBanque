@@ -26,9 +26,12 @@ class Operation {
         return $this->operation_type;
     }
 
-    public function setAmount(float $amount):self {
-        $this->amount = $amount;
-        return $this;
+    public function setAmount(float $amount = null):self {
+        if ($amount) {
+            $this->amount = $amount;
+            return $this;
+        }
+        
     }
     public function getAmount() {
         return $this->amount;
