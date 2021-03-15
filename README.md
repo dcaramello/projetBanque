@@ -1,5 +1,6 @@
-### Semaine 8 : Structurer ses données en JSON et les récupérer à l’aide d’AJAX
+## Projet Réalisé pendant ma formation Développeur Web et Web Mobile à l'Afpa de Saint Etienne du Rouvray
 
+# Application bancaire
 
 ## Spécifications fonctionnelles :
 - Sur l’accueil du site, l’utilisateur voit par défaut tous ses comptes bancaires
